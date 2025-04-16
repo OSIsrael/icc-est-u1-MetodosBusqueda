@@ -14,6 +14,13 @@ public class ShowConsole {
         System.out.println("Codigo ingresado: "+code);
         return code;
     }
+    public String getName(){
+        System.out.println("Ingrese su nombre a encontrar: ");
+        String name=leer.next();
+        System.out.println("Nombre ingresado: "+name);
+        name.toLowerCase();
+        return name;
+    }
     public void showMessage(String message){
         System.out.println(message);
     }
