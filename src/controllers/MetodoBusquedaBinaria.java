@@ -15,26 +15,42 @@ public class MetodoBusquedaBinaria {
     public int findPersonByCode(int code) {
         int bajo = 0;
         int alto = personas.length - 1;
+    
         while (bajo <= alto) {
             int central = (bajo + alto) / 2;
-            if (personas[central].getCodigo() == code) {
-                return central;
+    
+            // Mostrar todo el arreglo con separadores
+            for (int i = 0; i < personas.length; i++) {
+                System.out.print(personas[i].getCodigo() + " | ");
             }
-            if (personas[central].getCodigo() < code) {
+            System.out.println();
+    
+            // Mostrar índices
+            System.out.println("bajo=" + bajo + "\talto=" + alto + "\tcentro=" + central + "\tvalorCentro=" + personas[central].getCodigo());
+    
+            // Mostrar dirección
+            if (personas[central].getCodigo() == code) {
+                System.out.println("--> ENCONTRADO\n");
+                return central;
+            } else if (personas[central].getCodigo() < code) {
+                System.out.println("--> DERECHA\n");
                 bajo = central + 1;
             } else {
+                System.out.println("--> IZQUIERDA\n");
                 alto = central - 1;
             }
         }
+    
         return -1;
     }
-    public void showPersonByCode() {
-        int codeToFinde = showConsole.getCode();
-        int indexPerson = findPersonByCode(codeToFinde);
+    
+    public void showPersonByAge() {
+        int ageToFinde = showConsole.getAge();
+        int indexPerson = findPersonByCode(ageToFinde);
         if (indexPerson == -1) {
             showConsole.showMessage("No ha sido encontrado");
         } else {
-            showConsole.showMessage("Persona con codigo: " + codeToFinde + " encontrada");
+            showConsole.showMessage("Persona con edad: " + ageToFinde + " encontrada");
             showConsole.showMessage(personas[indexPerson].toString());
         }
     }
@@ -81,4 +97,5 @@ public class MetodoBusquedaBinaria {
             }
         }
     }
+    
 }

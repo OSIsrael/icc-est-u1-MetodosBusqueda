@@ -37,7 +37,7 @@ public class MetodosBusqueda {
     public void showPersonByCode() {
         boolean condition=true;
         while (condition) {
-            int codeToFinde=showConsole.getCode();
+            int codeToFinde=showConsole.getAge();
             int indexPerson=findPersonByCode(codeToFinde);
             if (indexPerson>=0) {
                 showConsole.showMessage("Persona encontrada");

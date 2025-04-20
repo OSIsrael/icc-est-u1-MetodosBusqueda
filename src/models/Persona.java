@@ -1,20 +1,20 @@
 package models;
 
 public class Persona {
-    private int codigo;
+    private int edad;
     private String nombre;
-
-    public Persona(int codigo, String nombre) {
-        this.codigo = codigo;
+public Persona(){}
+    public Persona(int edad, String nombre) {
+        this.edad = edad;
         this.nombre = nombre;
     }
 
     public int getCodigo() {
-        return codigo;
+        return edad;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigo(int edad) {
+        this.edad = edad;
     }
 
     public String getNombre() {
@@ -27,7 +27,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona [codigo=" + codigo + ", nombre=" + nombre + "]";
+        return "Persona [edad=" + edad + ", nombre=" + nombre + "]";
     }
     
 
